@@ -2,7 +2,7 @@ import UIKit
 
 class _Template_Configurator: NSObject {
     
-    private static func configure(
+    static func configure(
         _ viewController: _Template_ViewController,
         resolver: DepenedencyResolvable) {
         
