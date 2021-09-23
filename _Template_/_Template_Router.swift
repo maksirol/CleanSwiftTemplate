@@ -4,6 +4,7 @@ protocol _Template_NavigationLogic {
 //    func navigateTo_Destination_()
 }
 
+///This should be used only for data passing and it's called automatically. It just need to have strict name convention:  routeTo**segue.identifier**.
 @objc protocol _Template_RoutingLogic {
 //    func routeTo_Destination_(segue: UIStoryboardSegue?)
 }
@@ -23,14 +24,6 @@ class _Template_Router: NSObject, _Template_RoutingLogic, _Template_DataPassing 
         self.viewController = viewController
         self.dataStore = dataStore
     }
-    
-    // MARK: Navigation
-    
-//    func navigateTo_Destination_() {
-//        viewController?.performSegue(
-//            withIdentifier: "_Destination_",
-//            sender: viewController)
-//    }
     
     // MARK: Routing
     
@@ -54,6 +47,14 @@ class _Template_Router: NSObject, _Template_RoutingLogic, _Template_DataPassing 
 }
 
 // MARK: - Navigation
+
+extension _Template_Router: _Template_NavigationLogic {
+    //    func navigateTo_Destination_() {
+    //        viewController?.performSegue(
+    //            withIdentifier: "_Destination_",
+    //            sender: viewController)
+    //    }
+}
 
 extension _Template_ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

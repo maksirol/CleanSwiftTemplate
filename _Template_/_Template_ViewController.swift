@@ -5,7 +5,7 @@ protocol _Template_DisplayLogic: BaseDisplayLogic {
 
 class _Template_ViewController: BaseViewController {
     var interactor: _Template_BusinessLogic?
-    var router: (NSObjectProtocol & _Template_RoutingLogic & _Template_DataPassing)?
+    var router: (NSObjectProtocol & _Template_RoutingLogic & _Template_NavigationLogic & _Template_DataPassing)?
     
     // MARK: View lifecycle
     
